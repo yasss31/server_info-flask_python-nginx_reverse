@@ -87,9 +87,9 @@ sudo apt install nginx links -y
 ````
 
 
-2. Edit file konfigurasi sites nginx
+2. Edit file konfigurasi nginx untuk sites 
 ````
-sudo nano /etc/nginx/sites-available/serverinfo
+sudo nano /etc/nginx/sites-available/reverse-proxy
 ````
 
 isi dengan
