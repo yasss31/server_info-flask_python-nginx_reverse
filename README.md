@@ -186,7 +186,21 @@ http://ip_public_bastion_host
 - Lihat hasilnya di menu kiri Subnet
 
 ### A.3. Buat Internet Gateway
-1. klik menu Subnet di sebelah kiri
+1. klik menu Internet Gateway di sebelah kiri
+2. Klik tombol oranye : Create internet gateway
+- Name : kantor-igw
+3. Klik tombol oranye : Create internet gateway
+
+### A.4. Buat NAT Gateway
+1. klik menu NAT Gateway di sebelah kiri
+2. Klik tombol oranye : Create NAT gateway
+- Name : kantor-nat
+- Availability mode : Zonal
+- Subnet : pilih kantor-public
+
+3. klik tombol Allocate Elastic IP 
+
+4. Klik tombol oranye : Create NAT gateway
 
 ## B. Buat SG di VPC kantor
 
