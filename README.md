@@ -14,7 +14,10 @@ Buat 2 SG:
 
 
 ---
-### EC2 Internal : Server Information Flask-Python 
+
+## II. Pembuatan Internal Server dan Bastion Host (DMZ)
+
+### A. EC2 Internal : Server Information Flask-Python 
 
 AMI yang digunakan adalah Amazon Linux
 
@@ -74,7 +77,7 @@ sudo chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
 
 
 ---
-### EC2 Bastion Host : NginX Reverse Proxy
+### B. EC2 Bastion Host : NginX Reverse Proxy
 
 - Name : bastion
 - AMI : Ubuntu Server 24.04 LTS (HVM)
