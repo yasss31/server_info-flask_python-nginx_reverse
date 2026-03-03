@@ -244,8 +244,8 @@ http://ip_public_bastion_host
 ## B. Buat SG di VPC kantor
 
 Buat 2 SG di VPC kantor:
-- flaskSG-kantor : ijinkan inbound rule port 22, 5000 (Flask Python) dari anywhere-IPv4 (0.0.0.0/0).
-- nginxSG-kantor : ijinkan inbound rule port 22, 80 (NginX) dari anywhere-IPv4 (0.0.0.0/0).
+- SG-kantor-flask : ijinkan inbound rule port 22, 5000 (Flask Python) dari anywhere-IPv4 (0.0.0.0/0).
+- SG-kantor-nginx : ijinkan inbound rule port 22, 80 (NginX) dari anywhere-IPv4 (0.0.0.0/0).
 
 ## C. Buat EC2 Internal : Server Information Flask-Python 
 Buat di subnet kantor-private
