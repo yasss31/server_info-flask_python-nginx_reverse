@@ -38,7 +38,8 @@ chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
 
 # 6. Jalankan aplikasi di background
 # Gunakan port 5000 (default Flask)
-nohup python3 app.py > log_flask.txt 2>&1 &
+#nohup python3 app.py > log_flask.txt 2>&1 &
+gunicorn --bind 0.0.0.0:5000 app:app
 ````
 
 ---
