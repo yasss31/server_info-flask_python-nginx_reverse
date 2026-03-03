@@ -250,5 +250,5 @@ Buat 2 SG di VPC kantor:
 ## C. Buat EC2 Internal : Server Information Flask-Python 
 Buat di subnet kantor-private
 
-## D. EC2 Bastion Host : NginX Reverse Proxy
+## D. Buat EC2 Bastion Host : NginX Reverse Proxy
 Buat di subnet kantor-public
