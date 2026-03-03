@@ -164,7 +164,8 @@ http://ip_public_bastion_host
 - VPC settings : pilih VPC only
 - Name : kantor 
 - IPv4 CIDR : 10.100.0.0/16
-- klik tombol oranye Create VPC di bawah
+
+3. klik tombol oranye Create VPC di bawah
 - hasil dapat dilihat di menu kiri Your VPCs
 
 ### A.2. Buat Subnet
@@ -181,7 +182,7 @@ http://ip_public_bastion_host
 - Availability Zone : us-east-1a
 - IPv4 subnet CIDR block : 10.100.2.0/24
 
-- klik tombol oranye : Create Subnet
+4. klik tombol oranye : Create Subnet
 - Lihat hasilnya di menu kiri Subnet
 
 ### A.3. Buat Internet Gateway
