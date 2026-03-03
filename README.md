@@ -42,6 +42,54 @@ chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
 gunicorn --bind 0.0.0.0:5000 app:app
 ````
 
+
+versi 2 langsung start
+````
+#!/bin/bash
+# 1. Update sistem dan install dependencies
+dnf update -y
+dnf install python3-pip git -y
+
+# 2. Berpindah ke home directory ec2-user
+cd /home/ec2-user
+
+# 3. Clone repository
+# Pastikan nama folder hasil clone sesuai (biasanya sesuai nama repo atau folder tertentu)
+git clone https://github.com/paknux/server_info-flask_python-nginx_reverse.git serverinfo-flask
+cd serverinfo-flask
+
+# 4. Install library Python
+pip3 install flask psutil gunicorn
+
+# 5. Buat Systemd Service File agar Flask jalan otomatis setelah restart
+cat <<EOF | sudo tee /etc/systemd/system/flaskapp.service
+[Unit]
+Description=Gunicorn instance to serve Flask Server Info
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/serverinfo-flask
+# Cari lokasi gunicorn otomatis
+ExecStart=$(which gunicorn) --workers 3 --bind 0.0.0.0:5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# 6. Reload, Start, dan Enable Service
+sudo systemctl daemon-reload
+sudo systemctl start flaskapp
+sudo systemctl enable flaskapp
+
+# 7. Pastikan hak akses folder benar
+sudo chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
+````
+
+
+
 ---
 ### EC2 Reverse Proxy : Subnet Public
 
