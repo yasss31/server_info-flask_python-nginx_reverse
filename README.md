@@ -1,4 +1,4 @@
-## Serverless Elastic Beanstalk (PHP), RDS (MySQL), dan S3 untuk Aplikasi Stock Barang TOKO ORANGE dengan S3 SDK (tanpa Key, tanpa Secret, tanpa Token) 
+## Simple Server Information - Flask & Python  
 #### Menggunakan solusi Serverless  Elastic Beanstalk di lingkungan **AWS Academy**.
 ---
 
