@@ -156,9 +156,9 @@ http://ip_public_bastion_host
 5. tempatkan EC2 bastion (Nginx) di kantor-public
 6. tempatkan EC2 internal (Flask-Python) di kantor-private
 
-## A. Buat VPC kantor
+## A. Konfigurasi VPC kantor
 1. Cari menu VPC
-2. Klik tombol oranye : Create VPC
+2. Buat VPC sevara manual dengan cara Klik tombol oranye : Create VPC
 - VPC settings : pilih VPC only
 - Name : kantor 
 - IPv4 CIDR : 10.100.0.0/16
