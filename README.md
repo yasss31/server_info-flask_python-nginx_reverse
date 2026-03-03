@@ -122,7 +122,7 @@ sudo ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
 ````
 
-5. Restart nginx
+5. Test konfigurasi NginX dan restart NginX
 ````
 sudo nginx -t
 sudo systemctl restart nginx
