@@ -163,6 +163,7 @@ http://ip_public_bastion_host
 - Name : kantor 
 - IPv4 CIDR : 10.100.0.0/16
 - klik tombol oranye Create VPC di bawah
+- hasil dapat dilihat di menu kiri Your VPCs
 
 ## B. Buat SG di VPC kantor
 
