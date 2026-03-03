@@ -8,18 +8,20 @@
 
 ## I. Persiapan Infrastruktur AWS
 
-Buat dulu SG yang sesuai, ijinkan inbound rule port 22, 80 (web server), dan 3306 (MySQL/Aurora) dari anywhere-IPv4 (0.0.0.0/0).
+Buat 2 SG:
+flaskSG : ijinkan inbound rule port 22, 5000 (Flask Python) dari anywhere-IPv4 (0.0.0.0/0).
+nginxSG : ijinkan inbound rule port 22, 80 (NginX) dari anywhere-IPv4 (0.0.0.0/0).
 
 
 ---
-### EC2 Private
+### EC2 Server Information 
 
 AMI yang digunakan adalah Amazon Linux
 
 - AMI : Amazon Linux 2023 (kernel-6.1)
 - Instance type : t2.nano
 - key pair : vockey
-- Security Group : Allow inbound port 22 80 5000 dari 0.0.0.0/0
+- Security Group : flaskSG (22 dan 5000)
 
 
 Masukkan ini sebagai script user data (di menu Advanced Details)
@@ -71,9 +73,12 @@ sudo chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
 
 
 ---
-### EC2 Reverse Proxy : Subnet Public
+### EC2 NginX Reverse Proxy
 
-AMI : Ubuntu 24.04
+- AMI : Ubuntu Server 24.04 LTS (HVM)
+- Instance type : t2.nano
+- key pair : vockey
+- Security Group : nginxSG (22 dan 80)
 
 1. Update dan install paket yang dibutuhkan
 ````
