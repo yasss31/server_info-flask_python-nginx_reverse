@@ -26,7 +26,7 @@ dnf install python python3-pip git -y
 cd /home/ec2-user
 
 # 3. Clone repository dari GitHub
-git clone https://github.com/paknux/serverinfo-flask.git
+git clone https://github.com/paknux/server_info-flask_python-nginx_reverse.git
 cd serverinfo-flask
 
 # 4. Install library Python yang dibutuhkan
