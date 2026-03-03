@@ -188,14 +188,15 @@ http://ip_public_bastion_host
 ### A.3. Buat Internet Gateway
 1. klik menu Internet Gateway di sebelah kiri
 2. Klik tombol oranye : Create internet gateway
-- Name : kantor-igw
+- Name : igw-kantor
 3. Klik tombol oranye : Create internet gateway
-- Lihat hasilnya di menu kiri internet gateway
+4. klik tombol Attach to VPC
+- Pilih VPC kantor
 
 ### A.4. Buat NAT Gateway
 1. klik menu NAT Gateway di sebelah kiri
 2. Klik tombol oranye : Create NAT gateway
-- Name : kantor-nat
+- Name : nat-kantor
 - Availability mode : Zonal
 - Subnet : pilih kantor-public
 
@@ -204,6 +205,26 @@ http://ip_public_bastion_host
 4. Klik tombol oranye : Create NAT gateway
 - Lihat hasilnya di menu kiri NAT gateway
 - Lihat Elastic IPs yang dipegang di menu kiri Elastic IPs
+
+### A.5. Buat Routing Table
+1. klik menu Route table di sebelah kiri
+2. Klik tombol oranye : Create route table
+- Name : rt-kantor-public
+- VPC : pilih kantor
+3. Klik tombol oranye : Create route table
+4. di Tab Routes klik tombol Edit router
+- klik Add route
+- Destination : 0.0.0.0/0
+- Target : pilih Internet Gateway
+- kemudian pilih igw-kantor
+
+
+
+
+4. Klik tombol oranye : Create route table
+- Name : rt-kantor-private
+- VPC : pilih kantor
+5. Klik tombol oranye : Create route table
 
 ## B. Buat SG di VPC kantor
 
