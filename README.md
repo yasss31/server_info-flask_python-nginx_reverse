@@ -10,6 +10,34 @@
 
 Buat dulu SG yang sesuai, ijinkan inbound rule port 22, 80 (web server), dan 3306 (MySQL/Aurora) dari anywhere-IPv4 (0.0.0.0/0).
 
+
+---
+### EC2
+````
+#!/bin/bash
+# 1. Update sistem dan install dependencies
+dnf update -y
+dnf install python3-pip git -y
+
+# 2. Berpindah ke home directory ec2-user
+cd /home/ec2-user
+
+# 3. Clone repository dari GitHub
+git clone https://github.com/paknux/serverinfo-flask.git
+cd serverinfo-flask
+
+# 4. Install library Python yang dibutuhkan
+# Kita install flask dan psutil (umumnya digunakan di repo tersebut)
+pip3 install flask psutil
+
+# 5. Pastikan hak akses folder benar untuk ec2-user
+chown -R ec2-user:ec2-user /home/ec2-user/serverinfo-flask
+
+# 6. Jalankan aplikasi di background
+# Gunakan port 5000 (default Flask)
+nohup python3 app.py > log_flask.txt 2>&1 &
+````
+
 ---
 
 ### A. Buat RDS
